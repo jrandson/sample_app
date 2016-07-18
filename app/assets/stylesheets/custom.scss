@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-<<<<<<< HEAD
+
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -12,8 +12,6 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
-=======
->>>>>>> sign-up
 /* universal */
 
 body {
@@ -110,7 +108,7 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 15px;
-<<<<<<< HEAD
+
 }
 
 
@@ -151,6 +149,6 @@ input {
   .form-control {
     color: $state-danger-text;
   }
-=======
->>>>>>> sign-up
+
+
 }
