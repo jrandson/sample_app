@@ -6,7 +6,8 @@ class UserTest < ActiveSupport::TestCase
   # end
 
   def setup
-  	@user = User.new(name:"example user",email:"exampleuser@example.com")
+  	@user = User.new(name: "Example User", email: "user@example.com",
+                     password: "foobar", password_confirmation: "foobar")
   	#user.errors.full_messages
   	#msg.empty?
   end
@@ -49,6 +50,14 @@ class UserTest < ActiveSupport::TestCase
   	@user.email = mixed_case_email
   	@user.save
   	assert_not_equal mixed_case_email.downcase, @user.email
+  end
+
+  test "associated micropost should be destroyed" do
+    @user.save
+    @user.microposts.create(content: "lorem ipsum")
+    assert_difference 'Micropost.count', -1 do
+      @user.destroy 
+    end
   end
 
 

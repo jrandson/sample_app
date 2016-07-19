@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+    @microposts = @user.microposts.order(:created_at).take(6)
   	#debugger
   end
 
